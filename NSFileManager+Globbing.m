@@ -1,9 +1,9 @@
-#import "NSArray+Globbing.h"
+#import "NSFileManager+Globbing.h"
 #include <glob.h>
 
-@implementation NSArray (Globbing)
+@implementation NSFileManager (Globbing)
 
-+ (NSArray*) arrayWithFilesMatchingPattern: (NSString*) pattern inDirectory: (NSString*) directory {
+- (NSArray*) arrayWithFilesMatchingPattern: (NSString*) pattern inDirectory: (NSString*) directory {
 
     NSMutableArray* files = [NSMutableArray array];
     glob_t gt;

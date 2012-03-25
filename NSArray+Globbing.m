@@ -9,7 +9,7 @@
     glob_t gt;
     NSString* globPathComponent = [NSString stringWithFormat: @"/%@", pattern];
     NSString* expandedDirectory = [directory stringByExpandingTildeInPath];
-    char* fullPattern = [[expandedDirectory stringByAppendingPathComponent: globPathComponent] UTF8String];
+    const char* fullPattern = [[expandedDirectory stringByAppendingPathComponent: globPathComponent] UTF8String];
     if (glob(fullPattern, 0, NULL, &gt) == 0) {
         int i;
         for (i=0; i<gt.gl_matchc; i++) {

@@ -13,7 +13,7 @@
     if (glob(fullPattern, 0, NULL, &gt) == 0) {
         int i;
         for (i=0; i<gt.gl_matchc; i++) {
-            int len = strlen(gt.gl_pathv[i]);
+            size_t len = strlen(gt.gl_pathv[i]);
             NSString* filename = [[NSFileManager defaultManager] stringWithFileSystemRepresentation: gt.gl_pathv[i] length: len];
             [files addObject: filename];
         }
